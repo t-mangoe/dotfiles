@@ -68,6 +68,12 @@ if has('vim_starting') && dein#check_install()
 endif
 " }}}
 
+" 引数なしでvimを開くとNERDTreeを起動
+let file_name = expand('%')
+if has('vim_starting') && file_name == ''
+    autocmd VimEnter * NERDTree ./
+endif
+
 augroup fileTypeIndent
     autocmd!
 	autocmd bufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
