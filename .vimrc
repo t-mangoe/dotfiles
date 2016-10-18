@@ -4,8 +4,9 @@ endif
 
 set encoding=utf-8
 scriptencoding utf-8
-syntax on
 set tabstop=4 "画面上でタブが占める幅
+set softtabstop=4 "連続した空白を一度で削除
+set expandtab "タブが空白になる
 set autoindent
 set shiftwidth=4 "自動インデントでずれる幅
 set smartindent
@@ -23,16 +24,18 @@ inoremap ( ()<ESC>i
 "inoremap () ()
 inoremap [ []<ESC>i
 inoremap < <><ESC>i
+inoremap " ""<Left>
 
 "挿入モードでもhjklでカーソル移動
-inoremap <C-h> <Left>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-l> <Right>
+"inoremap <C-h> <Left>
+"inoremap <C-j> <Down>
+"inoremap <C-k> <Up>
+"inoremap <C-l> <Right>
+inoremap <C-j> <ESC>
 
 "行の両端への移動
-nnoremap <S-h> ^
-nnoremap <S-l> $
+nnoremap <C-h> ^
+nnoremap <C-l> $
 
 "コマンドモードでもEnterキーで改行挿入
 nnoremap <CR> A<CR><ESC>
@@ -64,3 +67,10 @@ if has('vim_starting') && dein#check_install()
   call dein#install()
 endif
 " }}}
+
+augroup fileTypeIndent
+    autocmd!
+	autocmd bufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
+
+syntax on
