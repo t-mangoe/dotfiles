@@ -1,3 +1,4 @@
+#基本はgithub.comのリポジトリを指定するだけ
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
@@ -7,3 +8,5 @@ repo = 'Shougo/vimproc.vim'
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
+[[plugins]]
+repo = 'Shougo/unite.vim'

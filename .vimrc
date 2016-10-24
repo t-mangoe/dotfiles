@@ -17,6 +17,8 @@ set cursorline
 set incsearch
 set autoread
 set showcmd
+set ignorecase "検索の際に大文字と小文字の区別をしない
+set smartcase "検索の際、大文字の場合は小文字と区別。ignorecaseが有効の場合のみ
 
 "括弧の補完
 inoremap {<Enter> {}<Left><CR><BS><ESC><S-o>
@@ -80,3 +82,13 @@ augroup fileTypeIndent
 augroup END
 
 syntax on
+
+"unite用の設定
+"入力モードで開始する
+let g:unite_enable_start_insert=1
+"バッファ一覧
+noremap <C-P> :Unite buffer<CR>
+"ファイル一覧
+noremap <C-N> :Unite -buffer-name=file file<CR>
+"最近使ったファイルの一覧
+noremap <C-Z> :Unite file_mru<CR>
