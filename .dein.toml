@@ -10,3 +10,6 @@ repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'

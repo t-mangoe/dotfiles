@@ -82,6 +82,7 @@ augroup fileTypeIndent
 augroup END
 
 syntax on
+set laststatus=2 "ステータスバーの表示。lightline用に設定
 
 "unite用の設定
 "入力モードで開始する
