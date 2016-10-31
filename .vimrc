@@ -82,7 +82,8 @@ augroup fileTypeIndent
 augroup END
 
 syntax on
-set laststatus=2 "ステータスバーの表示。lightline用に設定
+set laststatus=2 "ステータスバーの表示。lightline用に設定。
+"ステータスバーに色が表示されない場合、"export TERM=xterm-256color"のコマンドを叩くと、色がつくかも
 
 "unite用の設定
 "入力モードで開始する
