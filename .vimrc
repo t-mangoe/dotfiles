@@ -3,6 +3,8 @@ if !&compatible
 endif
 
 set encoding=utf-8
+set fileencodings=utf-8,sjis,euc-jp,iso-2022-jp "読み込み時の文字コードの設定
+set fileformats=unix,dos,mac "改行コードの自動判別。左側が優先
 scriptencoding utf-8
 set tabstop=4 "画面上でタブが占める幅
 set softtabstop=4 "連続した空白を一度で削除
@@ -19,6 +21,11 @@ set autoread
 set showcmd
 set ignorecase "検索の際に大文字と小文字の区別をしない
 set smartcase "検索の際、大文字の場合は小文字と区別。ignorecaseが有効の場合のみ
+"set hlsearch "検索結果をハイライト
+"ESCキー2度押しで、ハイライトの切り替え
+""nnoremap <silent><ESC><ESC> :<C-u>set nohlsearch!<CR>
+set wildmenu "コマンドモードの補完
+set history=5000 "保存するコマンド履歴の数
 
 "括弧の補完
 inoremap {<Enter> {}<Left><CR><BS><ESC><S-o>
@@ -84,6 +91,20 @@ augroup END
 syntax on
 set laststatus=2 "ステータスバーの表示。lightline用に設定。
 "ステータスバーに色が表示されない場合、"export TERM=xterm-256color"のコマンドを叩くと、色がつくかも
+
+" クリップボードからペーストするときの設定。インデントがずれないようにする
+if &term =~ "xterm"
+    let &t_SI .= "\e[?2004h"
+    let &t_EI .= "\e[?2004l"
+    let &pastetoggle = "\e[201~"
+
+    function XTermPasteBegin(ret)
+        set paste
+        return a:ret
+    endfunction
+
+    inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
+endif
 
 "unite用の設定
 "入力モードで開始する
