@@ -115,3 +115,21 @@ noremap <C-P> :Unite buffer<CR>
 noremap <C-N> :Unite -buffer-name=file file<CR>
 "最近使ったファイルの一覧
 noremap <C-Z> :Unite file_mru<CR>
+
+"neocomplete用の設定
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_ignore_case = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#auto_completion_start_length = 3
+let g:neocomplete#enable_camel_case_completion = 0
+let g:neocomplete#enable_fuzzy_completion = 1
+let g:neocomplete#use_vimproc = 1
+let g:neocomplete#sources#buffer#cache_limit_size = 1000000
+let g:neocomplete#sources#tags#cache_limit_size = 30000000
+if !exists('g:neocomplete#keyword_patterns')
+    let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns._ = '\h\w*'
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
