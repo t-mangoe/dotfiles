@@ -49,6 +49,9 @@ nnoremap <C-l> $
 "コマンドモードでもEnterキーで改行挿入
 nnoremap <CR> A<CR><ESC>
 
+"Yキーでカーソルから行末までコピー
+nnoremap Y y$
+
 " reset augroup
 augroup MyAutoCmd
   autocmd!
@@ -94,8 +97,8 @@ set laststatus=2 "ステータスバーの表示。lightline用に設定。
 
 " クリップボードからペーストするときの設定。インデントがずれないようにする
 if &term =~ "xterm"
-    let &t_SI .= "\e[?2004h"
-    let &t_EI .= "\e[?2004l"
+    let &t_ti .= "\e[?2004h"
+    let &t_te .= "\e[?2004l"
     let &pastetoggle = "\e[201~"
 
     function XTermPasteBegin(ret)
@@ -103,7 +106,10 @@ if &term =~ "xterm"
         return a:ret
     endfunction
 
+    noremap <special> <expr> <Esc>[200~ XTermPasteBegin("0i")
     inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
+    cnoremap <special> <Esc>[200~ <nop>
+    cnoremap <special> <Esc>[201~ <nop>
 endif
 
 "unite用の設定
