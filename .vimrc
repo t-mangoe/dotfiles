@@ -2,6 +2,7 @@ if !&compatible
   set nocompatible
 endif
 
+filetype plugin indent on
 set encoding=utf-8
 set fileencodings=utf-8,sjis,euc-jp,iso-2022-jp "読み込み時の文字コードの設定
 set fileformats=unix,dos,mac "改行コードの自動判別。左側が優先
@@ -89,6 +90,7 @@ endif
 augroup fileTypeIndent
     autocmd!
 	autocmd bufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd bufNewFile,BufRead *.cpp setfiletype cpp
 augroup END
 
 syntax on
