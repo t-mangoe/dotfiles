@@ -86,6 +86,8 @@ let file_name = expand('%')
 if has('vim_starting') && file_name == ''
     autocmd VimEnter * NERDTree ./
 endif
+"<C-e>にNERDTreeを設定
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 augroup fileTypeIndent
     autocmd!
