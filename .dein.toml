@@ -19,3 +19,6 @@ repo = 'Shougo/neocomplete.vim'
 # neocompleteはluaが入っていないと使えません。有効化をするために、
 # sudo apt-get install vim-gnome
 # などでluaを入れましょう
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
