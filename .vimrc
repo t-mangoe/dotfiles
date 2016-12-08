@@ -131,11 +131,15 @@ noremap <C-N> :Unite -buffer-name=file file<CR>
 noremap <C-Z> :Unite file_mru<CR>
 
 "neocomplete用の設定
+"起動時に有効化
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_ignore_case = 1
+"大文字が入力されるまで大文字小文字の区別を無視する
 let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#enable_auto_select = 1
-let g:neocomplete#auto_completion_start_length = 3
+"補完候補の一番先頭を選択状態にする
+"let g:neocomplete#enable_auto_select = 1
+"補完を表示する最小文字数
+let g:neocomplete#auto_completion_start_length = 1
 let g:neocomplete#enable_camel_case_completion = 0
 let g:neocomplete#enable_fuzzy_completion = 1
 let g:neocomplete#use_vimproc = 1
