@@ -29,7 +29,7 @@ set wildmenu "コマンドモードの補完
 set history=5000 "保存するコマンド履歴の数
 
 "括弧の補完
-inoremap {<Enter> {}<Left><CR><BS><ESC><S-o>
+"inoremap {<Enter> {}<Left><CR><BS><ESC><S-o>
 inoremap ( ()<ESC>i
 "inoremap () ()
 inoremap [ []<ESC>i
