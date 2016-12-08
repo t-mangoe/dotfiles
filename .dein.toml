@@ -24,3 +24,5 @@ repo = 'Shougo/neocomplete.vim'
 repo = 'Shougo/neomru.vim'
 [[plugins]]
 repo = 'kana/vim-smartchr'
+[[plugins]]
+repo = 'rsense/rsense'
