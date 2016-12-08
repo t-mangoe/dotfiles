@@ -91,8 +91,9 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 
 augroup fileTypeIndent
     autocmd!
-	autocmd bufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
+	"autocmd bufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd bufNewFile,BufRead *.cpp setfiletype cpp
+    autocmd bufNewFile,BufRead *.rb setfiletype ruby
 augroup END
 
 syntax on
