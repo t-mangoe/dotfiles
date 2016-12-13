@@ -53,6 +53,21 @@ nnoremap <CR> A<CR><ESC>
 "Yキーでカーソルから行末までコピー
 nnoremap Y y$
 
+"画面分割のキーバインド
+nnoremap s <nop>
+nnoremap ss :sp<CR>
+nnoremap sv :vs<CR>
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
+nnoremap sH <C-w>H
+nnoremap st :tabnew<CR>
+nnoremap sT :Unite tab<CR>
+
 " reset augroup
 augroup MyAutoCmd
   autocmd!
@@ -128,7 +143,7 @@ noremap <silent> [unite]b :Unite buffer<CR>
 "ファイル一覧
 noremap <C-N> :Unite -buffer-name=file file<CR>
 "最近使ったファイルの一覧
-noremap <C-Z> :Unite file_mru<CR>
+noremap <silent> [unite]m :Unite file_mru<CR>
 
 "neocomplete用の設定
 "起動時に有効化
