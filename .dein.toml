@@ -10,6 +10,8 @@ repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'Shougo/unite.vim'
+[[plugins]]
+repo = 'Shougo/unite-outline'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
@@ -26,3 +28,8 @@ repo = 'Shougo/neomru.vim'
 repo = 'kana/vim-smartchr'
 #[[plugins]]
 #repo = 'rsense/rsense'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'

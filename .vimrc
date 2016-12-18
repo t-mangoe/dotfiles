@@ -165,4 +165,8 @@ if !exists('g:neocomplete#keyword_patterns')
 endif
 let g:neocomplete#keyword_patterns._ = '\h\w*'
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+    \ }
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
