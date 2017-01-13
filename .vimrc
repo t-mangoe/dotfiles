@@ -53,6 +53,9 @@ nnoremap <CR> A<CR><ESC>
 "Yキーでカーソルから行末までコピー
 nnoremap Y y$
 
+"ZQ(保存せずに閉じる)を無効化
+nnoremap ZQ <nop>
+
 "画面分割のキーバインド
 nnoremap s <nop>
 nnoremap ss :sp<CR>
