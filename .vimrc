@@ -112,8 +112,11 @@ augroup fileTypeIndent
 	"autocmd bufNewFile,BufRead *.rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
     autocmd bufNewFile,BufRead *.cpp setfiletype cpp
     autocmd bufNewFile,BufRead *.rb setfiletype ruby
+    autocmd bufNewFile,BufRead *.md setfiletype markdown
 augroup END
 
+" markdownのハイライトを追加
+"set syntax=markdown
 syntax on
 set laststatus=2 "ステータスバーの表示。lightline用に設定。
 "ステータスバーに色が表示されない場合、"export TERM=xterm-256color"のコマンドを叩くと、色がつくかも
