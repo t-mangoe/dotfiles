@@ -27,6 +27,7 @@ set smartcase "検索の際、大文字の場合は小文字と区別。ignoreca
 ""nnoremap <silent><ESC><ESC> :<C-u>set nohlsearch!<CR>
 set wildmenu "コマンドモードの補完
 set history=5000 "保存するコマンド履歴の数
+set background=dark "背景が暗い場合のカラースキーマに変更
 
 "括弧の補完
 "inoremap {<Enter> {}<Left><CR><BS><ESC><S-o>
@@ -68,6 +69,7 @@ nnoremap sJ <C-w>J
 nnoremap sK <C-w>K
 nnoremap sL <C-w>L
 nnoremap sH <C-w>H
+"タブ関連のキーバインド
 nnoremap st :tabnew<CR>
 nnoremap sT :Unite tab<CR>
 
@@ -173,6 +175,9 @@ let g:neocomplete#keyword_patterns._ = '\h\w*'
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
-    \ 'scheme' : $HOME.'/.gosh_completions'
+    \ 'scheme' : $HOME.'/.gosh_completions',
+    \ 'ruby' : s:dein_dir . '/repos/github.com/pocke/dicts/ruby.dict',
     \ }
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+"BSで補完候補のポップアップを消去
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"

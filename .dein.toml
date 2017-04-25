@@ -33,3 +33,7 @@ repo = 'kana/vim-smartchr'
 repo = 'Shougo/neosnippet.vim'
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+
+# neocompleteでのrubyの辞書
+[[plugins]]
+repo = 'pocke/dicts'
