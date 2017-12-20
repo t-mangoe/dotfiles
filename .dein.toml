@@ -38,3 +38,9 @@ repo = 'Shougo/neosnippet-snippets'
 # neocompleteでのrubyの辞書
 [[plugins]]
 repo = 'pocke/dicts'
+
+[[plugins]]
+repo = "tpope/vim-endwise"
+
+[[plugins]]
+repo = "nathanaelkane/vim-indent-guides"

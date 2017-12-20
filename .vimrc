@@ -28,6 +28,7 @@ set smartcase "検索の際、大文字の場合は小文字と区別。ignoreca
 set wildmenu "コマンドモードの補完
 set history=5000 "保存するコマンド履歴の数
 set background=dark "背景が暗い場合のカラースキーマに変更
+set backspace=indent,eol,start "バックスペースが効かないときの対処コード
 
 "括弧の補完
 "inoremap {<Enter> {}<Left><CR><BS><ESC><S-o>
@@ -119,7 +120,6 @@ augroup END
 
 " markdownのハイライトを追加
 "set syntax=markdown
-syntax on
 set laststatus=2 "ステータスバーの表示。lightline用に設定。
 "ステータスバーに色が表示されない場合、"export TERM=xterm-256color"のコマンドを叩くと、色がつくかも
 
@@ -181,3 +181,8 @@ let g:neocomplete#sources#dictionary#dictionaries = {
 inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 "BSで補完候補のポップアップを消去
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+
+" vimを立ち上げたときに、自動的にvim-indent-guidesを有効にする
+"colorscheme koehler
+let g:indent_guides_enable_on_vim_startup = 1
+syntax on
