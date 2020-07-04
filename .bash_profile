@@ -11,3 +11,8 @@ fi
 if [ "$(uname)" == 'Darwin' ]; then
     GREP_OPTIONS="--color=always";export GREP_OPTIONS
 fi
+
+if [ -d "$HOME/.cargo/bin" ]; then
+    # cargoで導入したコマンドにパスを通す
+    PATH="$HOME/.cargo/bin:$PATH"
+fi

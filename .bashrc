@@ -126,3 +126,8 @@ if [ "$(uname)" == 'Darwin' ]; then
     source /usr/local/etc/bash_completion.d/git-prompt.sh
     source /usr/local/etc/bash_completion.d/git-completion.bash
 fi
+
+# starshipの設定
+if [ "$(uname)" == 'Linux' ]; then
+    eval "$(starship init bash)"
+fi
