@@ -3,6 +3,11 @@ if [ -f ~/.bashrc ]; then
   . ~/.bashrc
 fi
 
+if [ "$(uname)" == 'Linux' ]; then
+    # rbenvにパスを通す
+    export PATH="$HOME/.rbenv/bin:$PATH"
+fi
+
 if type rbenv > /dev/null 2>&1; then
     # rbenvコマンドが存在する場合のみ実行
     eval "$(rbenv init -)"
