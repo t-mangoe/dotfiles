@@ -1,8 +1,3 @@
-# .bashrcの実行
-if [ -f ~/.bashrc ]; then
-  . ~/.bashrc
-fi
-
 if [ "$(uname)" == 'Linux' ]; then
     # rbenvにパスを通す
     export PATH="$HOME/.rbenv/bin:$PATH"
@@ -20,4 +15,9 @@ fi
 if [ -d "$HOME/.cargo/bin" ]; then
     # cargoで導入したコマンドにパスを通す
     PATH="$HOME/.cargo/bin:$PATH"
+fi
+
+# .bashrcの実行
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
 fi
