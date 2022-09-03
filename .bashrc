@@ -130,4 +130,8 @@ fi
 if [ "$(uname)" == 'Linux' ]; then
     # starshipの設定
     eval "$(starship init bash)"
+
+    # export PATH="$HOME/.rbenv/bin:$PATH"
+    # eval "$(rbenv init - bash)"
+    . "$HOME/.cargo/env"
 fi
