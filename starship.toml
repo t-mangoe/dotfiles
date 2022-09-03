@@ -1,0 +1,48 @@
+[battery]
+charging_symbol = "⚡️"
+# discharging_symbol = "💀"
+discharging_symbol = "  "
+full_symbol = "🔋"
+
+[[battery.display]]
+threshold = 10
+style = "bold red"
+# symbol = "aaa"
+
+[[battery.display]]
+threshold = 20
+style = "bold yellow"
+# symbol = "🔋"
+
+[[battery.display]]
+threshold = 100
+style = "bold green"
+# discharging_symbol = "aaa"
+# charging_symbol = "bbb"
+
+[git_status]
+conflicted = "🏳"
+ahead = "🏎💨"
+behind = "😰"
+diverged = "😵"
+untracked = "🤷‍"
+stashed = "📦"
+modified = "✏️ $count"
+# modified = " $count"
+staged = '[++\($count\)](green)'
+renamed = "👅"
+deleted = "🗑"
+
+[directory]
+#truncate_to_repo = false
+#truncation_length = 2
+#repo_root_style = "green bold"
+#truncation_symbol = '../'
+
+[directory.substitutions]
+
+#"~/git_repository" = "aaaaa"
+
+#[cmd_duration]
+#min_time = 100
+#format = "underwent $millis"
